@@ -18,7 +18,7 @@ CXXFLAGS = -std=c++11 $(FLAGS)
 softsfp_archive: $(SOFTSFP_ARCHIVE)
 
 $(SOFTSFP_ARCHIVE): $(SOFTSFP_OBJS) | $(SOFTSFP_BUILD_DIR)
-	ar rcs $@ $^
+	$(AR) -rcs $@ $^
 
 $(SOFTSFP_BUILD_DIR)/%.o: $(SOFTSFP_SRC)/%.cc | $(SOFTSFP_BUILD_DIR)
 	$(CXX) -o $@ $(CXXFLAGS) -c $^
